@@ -2,7 +2,7 @@
 
 **Integrantes:** 
 * Mauricio
-* Rony
+* Bellido Chambi Rony Widmer 
 
 ## Descripción del Proyecto
 "Sabor Andino" es una aplicación móvil desarrollada en Android Studio utilizando Jetpack Compose, enfocada en la gestión de pedidos para un restaurante de comida tradicional peruana.
