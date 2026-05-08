@@ -1,7 +1,7 @@
 # Evaluación 2 de Móviles
 
 **Integrantes:** 
-* Mauricio
+* Mauricio Rojas Tello
 * Bellido Chambi Rony Widmer 
 
 ## Descripción del Proyecto
