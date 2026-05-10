@@ -2,10 +2,14 @@ package com.example.sabor_andino.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val AndinoGold = Color(0xFFE0A83B)
+val AndinoClay = Color(0xFF8B5E34)
+val AndinoLeaf = Color(0xFF4D6B3C)
+val AndinoCream = Color(0xFFFFF8EE)
+val AndinoCoffee = Color(0xFF2F241F)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val AndinoGoldDark = Color(0xFFF1C76A)
+val AndinoClayDark = Color(0xFFB78253)
+val AndinoLeafDark = Color(0xFF94B17C)
+val AndinoNight = Color(0xFF1E1A18)
+val AndinoSand = Color(0xFF3A312C)
