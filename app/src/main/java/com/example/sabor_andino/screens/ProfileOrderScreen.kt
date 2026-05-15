@@ -12,7 +12,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -124,8 +126,14 @@ private fun OrderContent(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Tu pedido esta vacio")
-            Text("Agrega platos desde el menu")
+            Icon(
+                imageVector = Icons.Default.ShoppingCart,
+                contentDescription = "Pedido vacio",
+                tint = MaterialTheme.colorScheme.primary
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            Text("Tu pedido esta vacio", style = MaterialTheme.typography.titleMedium)
+            Text("Agrega platos desde el menu", style = MaterialTheme.typography.bodyMedium)
         }
         return
     }
@@ -138,7 +146,10 @@ private fun OrderContent(
         LazyColumn(modifier = Modifier.weight(1f)) {
             items(orderedDishes, key = { it.id }) { dish ->
                 val quantity = cartItems[dish.id] ?: 0
-                Card(modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)) {
+                Card(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                ) {
                     Column(modifier = Modifier.padding(12.dp)) {
                         Text(dish.name, fontWeight = FontWeight.SemiBold)
                         Text("S/ %.2f c/u".format(dish.price), style = MaterialTheme.typography.bodySmall)

@@ -1,4 +1,4 @@
-package com.example.sabor_andino.data
+ï»¿package com.example.sabor_andino.data
 
 enum class DishCategory(val label: String) {
     ENTRADAS("Entradas"),
@@ -14,18 +14,20 @@ data class Dish(
     val fullDescription: String,
     val price: Double,
     val category: DishCategory,
-    val imageEmoji: String
+    val imageUrl: String,
+    val badge: String? = null
 )
 
 val sampleDishes = listOf(
     Dish(
         id = 1,
-        name = "Causa Limeña",
+        name = "Causa Limena",
         shortDescription = "Papa amarilla, pollo y palta.",
         fullDescription = "Capa suave de papa amarilla con limon, rellena con pollo deshilachado, mayonesa casera y palta fresca.",
         price = 18.0,
         category = DishCategory.ENTRADAS,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/peruvian,food?lock=11",
+        badge = "Mas vendido"
     ),
     Dish(
         id = 2,
@@ -34,7 +36,7 @@ val sampleDishes = listOf(
         fullDescription = "Corazon de res marinado en aji panca y especias, servido con papa dorada y choclo.",
         price = 22.0,
         category = DishCategory.ENTRADAS,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/skewer,food?lock=12"
     ),
     Dish(
         id = 3,
@@ -43,7 +45,8 @@ val sampleDishes = listOf(
         fullDescription = "Salteado criollo de carne, cebolla, tomate y salsa de soya, acompanado de arroz y papas fritas.",
         price = 32.0,
         category = DishCategory.FONDO,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/beef,food?lock=13",
+        badge = "Mas vendido"
     ),
     Dish(
         id = 4,
@@ -52,7 +55,7 @@ val sampleDishes = listOf(
         fullDescription = "Pollo deshilachado en crema de aji amarillo, queso y pecanas, servido con arroz y huevo cocido.",
         price = 29.0,
         category = DishCategory.FONDO,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/chicken,food?lock=14"
     ),
     Dish(
         id = 5,
@@ -61,7 +64,7 @@ val sampleDishes = listOf(
         fullDescription = "Aros de camote y zapallo fritos al momento, banados en miel de chancaca.",
         price = 16.0,
         category = DishCategory.POSTRES,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/dessert,donut?lock=15"
     ),
     Dish(
         id = 6,
@@ -70,7 +73,8 @@ val sampleDishes = listOf(
         fullDescription = "Copa de manjar blanco con merengue italiano aromatizado con canela y oporto.",
         price = 14.0,
         category = DishCategory.POSTRES,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/dessert,cup?lock=16",
+        badge = "Nuevo"
     ),
     Dish(
         id = 7,
@@ -79,7 +83,7 @@ val sampleDishes = listOf(
         fullDescription = "Refresco natural de maiz morado, pina, canela y clavo.",
         price = 9.0,
         category = DishCategory.BEBIDAS,
-        imageEmoji = "??"
+        imageUrl = "https://loremflickr.com/400/400/drink,juice?lock=17"
     ),
     Dish(
         id = 8,
@@ -88,6 +92,7 @@ val sampleDishes = listOf(
         fullDescription = "Cafe de altura tostado medio, filtrado al instante y servido caliente.",
         price = 8.0,
         category = DishCategory.BEBIDAS,
-        imageEmoji = "?"
+        imageUrl = "https://loremflickr.com/400/400/coffee,cup?lock=18",
+        badge = "Nuevo"
     )
 )

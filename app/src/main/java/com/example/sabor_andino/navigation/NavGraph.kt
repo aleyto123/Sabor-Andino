@@ -1,6 +1,11 @@
 package com.example.sabor_andino.navigation
 
 import android.net.Uri
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
@@ -30,7 +35,34 @@ fun SaborAndinoNavGraph() {
     val dishes = remember { sampleDishes }
     val cartItems = remember { mutableStateMapOf<Int, Int>() }
 
-    NavHost(navController = navController, startDestination = Routes.LOGIN) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.LOGIN,
+        enterTransition = {
+            fadeIn(animationSpec = tween(220)) + slideInHorizontally(
+                initialOffsetX = { it / 8 },
+                animationSpec = tween(280)
+            )
+        },
+        exitTransition = {
+            fadeOut(animationSpec = tween(180)) + slideOutHorizontally(
+                targetOffsetX = { -it / 8 },
+                animationSpec = tween(240)
+            )
+        },
+        popEnterTransition = {
+            fadeIn(animationSpec = tween(220)) + slideInHorizontally(
+                initialOffsetX = { -it / 8 },
+                animationSpec = tween(280)
+            )
+        },
+        popExitTransition = {
+            fadeOut(animationSpec = tween(180)) + slideOutHorizontally(
+                targetOffsetX = { it / 8 },
+                animationSpec = tween(240)
+            )
+        }
+    ) {
         composable(Routes.LOGIN) {
             LoginScreen(
                 onLoginSuccess = { userName ->
